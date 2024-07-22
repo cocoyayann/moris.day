@@ -5,6 +5,7 @@
 <div class="meta">
 	<div>Title: {data.metadata.title}</div>
 	<div>
+		<span>Tags: </span>
 		{#each data.metadata.tags as tag}
 			<span class='tag'>{tag}</span>
 		{/each}
