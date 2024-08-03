@@ -62,7 +62,7 @@
 <style>
     #contents {
         --bg-mode: light;
-        --back-color: #fff;
+        --back-color: #ffe;
         --font-color: #222;
         --head-color: teal;
         --foot-color: teal;
@@ -94,7 +94,7 @@
         & #title {
             position: absolute;
             height: 75%;
-            max-height: 80px;
+            max-height: 75px;
             aspect-ratio: 5;
             display: inline-block;
 

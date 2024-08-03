@@ -6,10 +6,10 @@
 
 <style>
     #blog {
-        --bg-color: #ddd4;
+        --bg-color: #fff8;
 
         @media(prefers-color-scheme: dark){
-            --bg-color: #ddd4;
+            --bg-color: #fff4;
         }
     }
     article {
