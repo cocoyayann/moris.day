@@ -185,7 +185,7 @@
     @media (scripting: none) {
         :global(.js) {display: none;}
         header{height:50px !important;}
-        main{min-height: calc(100vh - 300px);}
+        main{min-height: calc(100vh - 350px);}
     }
 
     :global(li) {
