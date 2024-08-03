@@ -1,3 +1,13 @@
+<script>
+    import { onMount } from "svelte";
+
+    onMount(()=>console.log(
+        window.getComputedStyle(document.querySelector("body")).getPropertyValue("--bg-mode")
+    ))
+</script>
+
 <h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<p>
+    Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
+</p>
 <a href="/blog">blog</a><span>👈</span>

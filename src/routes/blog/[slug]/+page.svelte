@@ -3,7 +3,7 @@
 </script>
 
 <div class="meta">
-	<div>Title: {data.metadata.title}</div>
+	<h1 class="title">{data.metadata.title}</h1>
 	<div>
 		<span>Tags: </span>
 		{#each data.metadata.tags as tag}
@@ -11,13 +11,21 @@
 		{/each}
 	</div>
 </div>
-<div>{@html data.post}</div>
+<article>{@html data.post}</article>
 
 <style>
+	.title {
+		font-size: 2em;
+		border-bottom: 1px solid;
+	}
 	.tag {
 		background-color: darkorange;
 		border-radius: 4px;
 		padding: 2px 4px;
 		margin: 3px;
+	}
+
+	article {
+		margin: 24px 12px;
 	}
 </style>

@@ -6,7 +6,8 @@ category: Tech
 tags: [Misskey, RaspberryPi]
 ---
 
-自分は１年ほど前にTwitterに見切りを付け、Misskeyに移行していたのですが、Twitterとの最大の違いはなんといっても「分散型」ということ。そして、オープンソースで公開されており、誰でもMisskeyのサーバーを建てられるということでしょう。\
+自分は１年ほど前にTwitterの民度の低さに見切りを付け、misskey.ioにお引越ししていたのですが、Twitterとの最大の違いはなんといっても「分散型」ということ。そして、オープンソースで開発されており、誰でもMisskeyのサーバーを建てられることでしょう。\
+Misskeyを始めたときはmisskey.ioという
 ユーザーが数人程度であれば、RaspberryPi4でも快適にミス廃生活を送ることができます。([実際に建てたMisskey鯖](https://mi.moris.day))
 
 今回建てたサーバーはこんな感じです
