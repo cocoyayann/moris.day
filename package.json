@@ -28,6 +28,9 @@
 	"dependencies": {
 		"@types/node": "^20.14.10",
 		"js-yaml": "^4.1.0",
-		"markdown-it": "^14.1.0"
+		"markdown-it": "^14.1.0",
+		"mdast-util-from-markdown": "^2.0.1",
+		"remark": "^15.0.1",
+		"remark-toc": "^9.0.0"
 	}
 }
