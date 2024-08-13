@@ -1,9 +1,20 @@
 <script>
     import { onMount } from "svelte";
 
-    onMount(()=>console.log(
-        window.getComputedStyle(document.querySelector("body")).getPropertyValue("--bg-mode")
-    ))
+    onMount(
+        async function () {
+            let res = await fetch(
+                'https://mi.moris.day/api/notes/show',
+                {
+                    method: "POST",
+                    body: '{"noteId":"9wjoqnygmciw00qk"}',
+                    headers: {"Content-Type": "application/json"}
+                }
+            )
+
+            console.log(await res.json())
+        }
+    )
 </script>
 
 <h1>Welcome to SvelteKit</h1>

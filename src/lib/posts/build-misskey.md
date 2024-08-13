@@ -1,7 +1,8 @@
 ---
 title: ラズパイでおひとり様Misskey鯖
 description: RaspberryPi4で分散型SNS、Misskeyのサーバーを建てた際の記録です。
-thumbnail: buid-misskey-thunbnail.avif
+thumbnail: buid-misskey-thumbnail.avif
+date: 2024-01-01
 category: Tech
 tags: [Misskey, RaspberryPi]
 ---
@@ -11,7 +12,7 @@ Misskeyを始めたときはmisskey.ioという
 ユーザーが数人程度であれば、RaspberryPi4でも快適にミス廃生活を送ることができます。([実際に建てたMisskey鯖](https://mi.moris.day))
 
 今回建てたサーバーはこんな感じです
-- RaspberryPi4 4GB
+- RaspberryPi 4 4GB
 - Debian 12
 - Misskey 2024.5.0
 - ドメインはCloudflareで取得
@@ -22,7 +23,7 @@ Misskeyを始めたときはmisskey.ioという
 ** OSは趣味の都合上Debianを使いましたがUbuntu Serverがおすすめです。公式も推奨してるので。 \
 ** 最後の「Cloudflare Tunnelで公開」はアパート住みでポート解放ができない為です。セキュリティ的にもこれがいいと思います。
 
-# node.jsのインストール
+## node.jsのインストール
 atpコマンドでインストール
 ```
 sudo pat install nodejs
@@ -51,5 +52,6 @@ sudo pat install nodejs
 
 
 
-sudo pat install nodejs
+sudo pat install nodejsaaalwっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっっp
 ```
+## postregsqlのインストール

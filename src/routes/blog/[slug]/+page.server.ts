@@ -1,38 +1,21 @@
-import { readFileSync } from 'node:fs';
-import markdownit from 'markdown-it';
-import yaml from 'js-yaml';
-
-function mdparser(file: string){
-    let split = file.split("---\n",3);
-    let front = split[1]
-    let meta = yaml.load(front);
-    let body  = split[2]
-
-    type metadata = {
-        title: string,
-        description: string,
-        thunbnail: string,
-        category: string,
-        tags: string[]
-    }
-
-    return {
-        "metadata": meta as metadata,
-        "body": body
-    }
-    
-}
+import readmd from '$lib/server/readmd';
+import { remark } from 'remark'
 
 export async function load({params}) {
-    const postfile = readFileSync(`/Users/moris/blog/src/lib/posts/${params.slug}.md`, 'utf8');
 
-    const parsed = mdparser(postfile);
-    const md = markdownit();
-    const result = md.render(parsed.body);
+    let md = readmd(params.slug)
 
-    if (typeof parsed.metadata === 'object' && parsed.metadata != null){
-        return {"metadata": parsed.metadata, "post": result};
-    } else {
-        throw 'err: cannot parse front matter'
+    let mdast = remark().parse(md.post)
+
+    let header = mdast.children.filter((i) => i.type=='heading').map((i)=>{
+        let title: string = i.children[0].value
+        return {"depth": i.depth, "title": title}
+    })
+
+    return {
+        id: params.slug,
+        metadata: md.metadata,
+        post: md.post,
+        heading: header
     }
 }

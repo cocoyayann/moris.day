@@ -1,30 +1,9 @@
----
-title: Hello, World!
-description: Blog test post
-thumbnail: 0.webp
-date: 2024-01-01
-category: Tech
-tags: [test, Svelte, JavaScript]
----
+export default readmd;
 
-# Header1
-## Header2
-### Header3
-## LOOOOOOOOONG HEADERrrrrrrrrrrrrrrrrr
-body text 
-body text 
-body text 
-body text 
-body text 
-body text`inline code`body text 
-**BOLD TEXT**
-~~打ち消し線~~
+import { readFileSync } from 'node:fs';
+import meta from '$lib/server/meta'
 
-> 引用ですううううううううううううううううううううううううう
 
-code block
-
-```ts
 function readmd(postid:string){
     const postfile = readFileSync(`${process.cwd()}/src/lib/posts/${postid}.md`, 'utf8');
 
@@ -42,4 +21,3 @@ function readmd(postid:string){
 
     return {"metadata": metadata, 'post': md_text}
 }
-```

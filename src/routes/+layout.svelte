@@ -1,142 +1,177 @@
 <script lang="ts">
     let y: number = 0;
-    let header_height;
-    $:header_height = y<50 ? 100-y : 50;
+    let header;
+    $: header = y<25 ? '':'hide'
+    console.log("%cスクリプト実行しろ\nは全て詐欺です。", "font-size:10em;color:red;font-weight:bold;")
 </script>
 
 <svelte:window bind:scrollY={y} />
 
+
+
 <div id="contents">
-    <header style="--scroll:{header_height}px; --">
-        <div id="title">
-            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 250 50">
-                <a href="/">
-                    <text x="0" y="35" font-family="monospace" font-size="40" fill="white">moris.day</text>
-                </a>
-            </svg>
-        </div>
-        <div id="git_logo">
-            <svg version="1.1" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                <a target="_blank" href="https://github.com/cocoyayann">
-                    <path id="back" d="m0 0h80v80z" />
-                    <path id="tail" d="m39.7 33.4c-6.71-3.88-4.32-8.47-4.32-8.47 1.23-2.85 0.619-4.54 0.619-4.54-0.528-2.7 1.17-0.964 1.17-0.964 1.62 1.89 0.881 4.5 0.881 4.5-1.12 4.5 2.29 6.22 4.26 6.8z" fill="#fff"/>
-                    <path id="body" d="m35.9 36.3c0.388-0.396 1.73-1.84 3.14-3.28l2.62-2.51c1.27-1.01 2.5-1.33 3.38-1.3-3.45-4.25-5.92-9.95 0.741-16.8 1.9-1.95 4.16-2.81 6.41-2.95 0.252-0.607 1.44-3.05 4.75-4.51 0 0 1.87 0.973 2.96 6.63 1.78 1.05 3.41 2.33 4.86 3.82 1.41 1.44 2.73 3.21 3.73 4.97 5.52 1.06 6.48 3.03 6.48 3.03-1.43 3.41-3.82 4.61-4.4 4.86-0.0706 2.38-0.987 4.61-2.89 6.56-6.69 6.85-12.1 4.18-16.4 0.72 0.106 1.19-0.423 2.81-2.01 4.43-2.33 2.38-4.37 4.4-4.93 4.97z" fill="#fff"/>
-                </a>
-            </svg>
+    <header>
+        <div id='h-container' class={header}>
+            <div id='headercontents'>
+                <svg id="title" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50">
+                    <a href="/">
+                        <text x="0" y="35" textLength='200' font-family="Monaco" font-size="36" fill="#fff">moris.day</text>
+                    </a>
+                </svg>
+            </div>
+            <div id="octocat">
+                <svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+                    <a target="_blank" href="https://github.com/cocoyayann">
+                        <rect class="octo-back" width="100%" height="100%"></rect>
+                        <path class="octo-arm"  d="M128.3,109C113.8,99.7 119,89.6 119,89.6C122,82.7 120.5,78.6 120.5,78.6C119.2,72 123.4,76.3 123.4,76.3C127.3,81 125.5,87.3 125.5,87.3C123,97.6 130.6,102 134.4,103.2" style="transform-origin: 130px 106px;"></path>
+                        <path class="octo-body" d="M115,115C115,115 118.7,116.5 119.8,115.4L133.7,101.6C137,99.2 140,98.4 142.2,98.6C133.8,88 127.5,74.4 143.8,58C148.5,53.4 154,51.2 159.7,51C160.3,49.4 163.2,43.6 171.4,40C171.4,40 176,42.5 178.8,56.2C183,58.6 187.2,61.8 191,65.4C194.5,69 197.7,73.2 200,77.6C213.8,80.2 216.3,85 216.3,85C212.7,93 207,96 205.4,96.6C205.1,102.4 203,107.8 198.3,112.5C182,129 168.3,122.5 157.7,114C158,117 156.7,121 152.7,125 L141,136.5C139.8,137.7 141.6,142 141.8,141.8Z"></path>
+                    </a>
+                </svg>
+            </div>
         </div>
     </header>
     <main>
-        <div>
+        <div id='article'>
             <div id="slot"><slot /></div>
         </div>
+        <footer>
+            <div id="footercontents">
+                <div id="ftitle">moris.day<span>_</span></div>
+                <div id='footlink'>
+                    <dl>
+                        <dt>Site Map</dt>
+                        <dd><a href="/">Top Page</a></dd>
+                        <dd><a href="/about">About me</a></dd>
+                        <dd><a href="/blog">Blog</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>SNS</dt>
+                        <dd>
+                            <a target="_blank" href="https://mi.moris.day/@moris">Misskey</a>
+                        </dd>
+                        <dd>
+                            <a target="_blank" href="https://github.com/cocoyayann">Github</a>
+                        </dd>
+                        <dd>
+                            <a target="_blank" href="https://twitter.com/cocoyayan">Twitter</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div id="coffee"><a href="https://www.amazon.jp/hz/wishlist/ls/1OA6N018YLSF0?ref_=wl_share" target="_blank">☕️ Buy me a coffee</a></div>
+            </div>
+            <div style="margin:8px auto;width:fit-content;font-size:0.8em;">
+                    Copyright ©2024 moris All Rights Reserved.
+            </div>
+        </footer>
     </main>
-    <footer>
-        <div id="footer">
-            <div id="ftitle">moris.day<span>_</span></div>
-            <dl>
-                    <dt>Site Map</dt>
-                    <dd><a href="/">Top Page</a></dd>
-                    <dd><a href="/about">About me</a></dd>
-                    <dd><a href="/blog">Blog</a></dd>
-            </dl>
-            <dl>
-                    <dt>SNS</dt>
-                    <dd>
-                        <a target="_blank" href="https://mi.moris.day/moris">Misskey</a>
-                    </dd>
-                    <dd>
-                        <a target="_blank" href="https://github.com/cocoyayann">Github</a>
-                    </dd>
-                    <dd>
-                        <a target="_blank" href="https://twitter.com/cocoyayan">Twitter</a>
-                    </dd>
-            </dl>
-            <div id="coffee"><a href="https://www.amazon.jp/hz/wishlist/ls/1OA6N018YLSF0?ref_=wl_share" target="_blank">☕️ Buy me a coffee</a></div>
-        </div>
-        <div style="margin:auto;width:fit-content;font-size:0.8em;">
-                Copyright ©2024 moris All Rights Reserved.
-        </div>
-    </footer>
 </div>
+
 
 <style>
     #contents {
-        --bg-mode: light;
-        --back-color: #ffe;
+        --color-scheme: light;
+        --theme-color: hsl(85, 50%, 60%); /*hsl(85, 50%, 60%), #a1cc66*/
+        --back-color: hsl(60, 100%, 98%); /*hsl(60, 100%, 98%),#fffff5*/
         --font-color: #222;
-        --head-color: teal;
-        --foot-color: teal;
+        --grid-color: #fff;
 
         @media(prefers-color-scheme: dark){
-            --bg-mode: dark;
-            --back-color: #333;
-            --font-color: #fff;
-            --head-color: teal;
-            --foot-color: teal;
+            --color-scheme: dark;
+            --theme-color: teal;
+            --back-color: #323436;
+            --font-color: #fafafa;
+            --grid-color: #444;
         }
-
+    }
+    #contents {
+        display: flex;
+        flex-direction: column;
         background-color: var(--back-color);
-        transition: all 1s;
+        min-height: 100vh;
     }
 
     header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        height: 100px;
+        z-index: 10;
+        @media(width<720px) {
+            height: 50px;
+        }
+    }
+    #h-container {
+        position: relative;
+        height: 100%;
+        background-color: var(--theme-color);
+        transition: height .2s, transform .5s;
+    }
+    #h-container.hide {
+        height: 50px;
+        transition: height .4s, transform .5s;;
+        @media(width<720px) {
+            transform: translate(0px,-50px);
+        }
+    }
+
+    #headercontents {
         display: flex;
         align-items: center;
         justify-content: space-around;
-        position: sticky;
-        top: 0px;
-        left: 0;
-        height: var(--scroll);
-        max-height: 120px;
-        width: 100%;
-        background-color: var(--head-color);
+        height: 100%;
 
         & #title {
-            position: absolute;
-            height: 75%;
-            max-height: 75px;
-            aspect-ratio: 5;
             display: inline-block;
+            height: 70%;
+            /*aspect-ratio: 5;*/
+            width: auto;
+        }
+    }
+    #octocat {
+        position: absolute;
+        /*display: inline-block;*/
+        top: 0;
+        right: 0;
+        height: 100%;
+        aspect-ratio: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 100%);
+        @media (width<720px) {
+			display: none;
+		}
+        & .octo-arm,.octo-body {
+            fill: var(--theme-color);
+        }
+        & .octo-back {
+            fill: var(--back-color);
+        }
+    }
+    #octocat:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
 
-        }
-        & #git_logo {
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 100%;
-            aspect-ratio: 1;
-        }
-    }
-    #git_logo:hover #tail {
-            transform-origin: center;
-            animation: octotail 0.5s ease-in-out;
-    }
-    @keyframes octotail {
-        from,
-        50%,
-        to {
-            rotate: 0deg;
-        }
-        25%,
-        75% {
-            rotate: 10deg;
-        }
+    @keyframes octocat-wave {
+        0%,100%{transform:rotate(0)}
+        20%,60%{transform:rotate(-25deg)}
+        40%,80%{transform:rotate(10deg)}
     }
 
     main {
-        margin: 25px;
-        min-height: calc(100vh - 400px); /* header 100px + main_margin 2*25 + footer 250px */
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
         color: var(--font-color);
-        font-family: sans-serif;
+        font-family: system-ui, sans-serif;
+    }
+
+    #article {
+        flex-grow: 1;
+        margin: 4%;
     }
 
     footer {
-        top: auto;
-        bottom: 0;
-        left: 0;
-        height: 250px;
-        width: 100%;
-        background-color: var(--foot-color);
+        font-family: monospace;
+        height: fit-content;
+        background-color: var(--theme-color);
         color: white;
 
         & a {
@@ -149,21 +184,33 @@
             font-size: 1.25em;
         }
 
-        & #footer {
+        & #footercontents {
             display: flex;
             align-items: center;
             justify-content: space-around;
             width: 85%;
             height: 85%;
-            margin: auto;
+            margin: 25px auto;
+            @media(width < 720px) {
+                flex-direction: column;
+                row-gap: 20px;
+            }
         }
 
         & #ftitle {
             font-size: 40px;
-            font-family: monospace;
-            padding-bottom: 50px;
-            padding-right: 50px;
+            font-family: Monaco, monospace;
+            margin-bottom: 20px;
+            max-width: 500px;
         }
+        & #footlink {
+            width:80%;
+            max-width: 600px;
+            display: flex;
+            justify-content: space-around;
+            
+        }
+        & #coffee{display:none;}
     }
     #ftitle > span {
         animation: 1.5s step-end infinite underline;
@@ -185,7 +232,6 @@
     @media (scripting: none) {
         :global(.js) {display: none;}
         header{height:50px !important;}
-        main{min-height: calc(100vh - 350px);}
     }
 
     :global(li) {

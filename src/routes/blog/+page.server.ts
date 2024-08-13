@@ -1,9 +1,11 @@
-import {readdirSync} from 'node:fs';
-import path from 'node:path';
+import posts from '$lib/server/posts'
+import readmd from '$lib/server/readmd'
 
 export async function load(){
-    const posts = readdirSync("/Users/moris/blog/src/lib/posts/");
-    const postname = posts.map((post)=>path.parse(post).name);
+    let postlist = posts().map((id)=>{
+        let metadata = readmd(id)['metadata']
+        return {'id':id, 'meta':metadata}
+    })
 
-    return {"posts":postname};
+    return {'posts':postlist}
 }
