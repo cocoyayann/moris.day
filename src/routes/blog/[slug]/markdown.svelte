@@ -39,14 +39,31 @@
 
 
         & h1 {
-            padding-left: 6px;
             font-size: 2em;
-            border-left: 4px solid var(--theme-color);
+            @media(width>999px){padding-top:50px;margin-top:0;}
+        }
+        & h1::before {
+            display: inline-block;
+            content: '';
+            margin-right: 6px;
+            width: 4px;
+            height: 1.2em;
+            vertical-align: bottom;
+            background-color: var(--theme-color);
         }
         & h2 {
-            padding-left: 4px;
-            border-left: 3px solid var(--theme-color);
+            @media(width>999px){padding-top:50px;margin-top:0;}
         }
+        & h2::before {
+            display: inline-block;
+            content: '';
+            margin-right: 4px;
+            width: 3px;
+            height: 1.2em;
+            vertical-align: bottom;
+            background-color: var(--theme-color);
+        }
+
         /*
         & h3 {
             padding-left: 2px;
