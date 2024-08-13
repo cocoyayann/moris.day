@@ -3,7 +3,7 @@
 </script>
 
 {#each data.categorys as category}
-    <span class='tag'><a href="/blog/tag/{category}">{category}</a></span>
+    <span class='tag'><a href="/blog/category/{category}">{category}</a></span>
 {/each}
 
 <style>
