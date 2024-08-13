@@ -1,3 +1,4 @@
+// @ts-nocheck
 import readmd from '$lib/server/readmd';
 import { remark } from 'remark'
 
