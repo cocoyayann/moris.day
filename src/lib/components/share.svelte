@@ -6,16 +6,12 @@
         title: string;
     };
 
-    let board  = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h167q11-35 43-57.5t70-22.5q40 0 71.5 22.5T594-840h166q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560h-80v120H280v-120h-80v560Zm280-560q17 0 28.5-11.5T520-800q0-17-11.5-28.5T480-840q-17 0-28.5 11.5T440-800q0 17 11.5 28.5T480-760Z"/></svg>'
-    let copyed = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M620-163 450-333l56-56 114 114 226-226 56 56-282 282Zm220-397h-80v-200h-80v120H280v-120h-80v560h240v80H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h167q11-35 43-57.5t70-22.5q40 0 71.5 22.5T594-840h166q33 0 56.5 23.5T840-760v200ZM480-760q17 0 28.5-11.5T520-800q0-17-11.5-28.5T480-840q-17 0-28.5 11.5T440-800q0 17 11.5 28.5T480-760Z"/></svg>'
+    let copyed = false
 
     function copylink(){
         navigator.clipboard.writeText(share.url);
-        let a = document.querySelector('.copylink')
-        if (a!=null){
-            a.innerHTML = copyed
-            setTimeout(()=>a.innerHTML=board, 1200)
-        }
+        copyed = true
+        setTimeout(()=>copyed=false, 1000)
     };
 
 </script>
@@ -23,7 +19,11 @@
 <div style="margin:4px 0 0 8px;color:#aaaa;font-size:0.85em">Share</div>
 <div id="share">
     <button class='copylink' type="button" on:click={copylink}>                                                      
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h167q11-35 43-57.5t70-22.5q40 0 71.5 22.5T594-840h166q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560h-80v120H280v-120h-80v560Zm280-560q17 0 28.5-11.5T520-800q0-17-11.5-28.5T480-840q-17 0-28.5 11.5T440-800q0 17 11.5 28.5T480-760Z"/></svg>
+        {#if copyed}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M620-163 450-333l56-56 114 114 226-226 56 56-282 282Zm220-397h-80v-200h-80v120H280v-120h-80v560h240v80H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h167q11-35 43-57.5t70-22.5q40 0 71.5 22.5T594-840h166q33 0 56.5 23.5T840-760v200ZM480-760q17 0 28.5-11.5T520-800q0-17-11.5-28.5T480-840q-17 0-28.5 11.5T440-800q0 17 11.5 28.5T480-760Z"/></svg>
+        {:else}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h167q11-35 43-57.5t70-22.5q40 0 71.5 22.5T594-840h166q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560h-80v120H280v-120h-80v560Zm280-560q17 0 28.5-11.5T520-800q0-17-11.5-28.5T480-840q-17 0-28.5 11.5T440-800q0 17 11.5 28.5T480-760Z"/></svg>
+        {/if}
     </button>
     <div class='misskey'>
         <a href="https://misskey-hub.net/share?url={share.url}&text={share.title}+-+moris+Blog" target="_blank">
@@ -46,6 +46,13 @@
             </div>
         </a>
     </div>
+    <div class="rss">
+        <a href="/blog/feed.rss" target="_blank">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M200-120q-33 0-56.5-23.5T120-200q0-33 23.5-56.5T200-280q33 0 56.5 23.5T280-200q0 33-23.5 56.5T200-120Zm480 0q0-117-44-218.5T516-516q-76-76-177.5-120T120-680v-120q142 0 265 53t216 146q93 93 146 216t53 265H680Zm-240 0q0-67-25-124.5T346-346q-44-44-101.5-69T120-440v-120q92 0 171.5 34.5T431-431q60 60 94.5 139.5T560-120H440Z"/></svg>
+            </div>
+        </a>
+    </div>
 </div>
 
 <style>
@@ -59,14 +66,15 @@
         max-height: 100%;
         max-width:100%;
         fill: #aaaa;
+        transition: fill .2s;
     }
     #share {
         display: flex;
-        height: 40px;
+        height: 36px;
         padding: 5px;
         justify-content:space-between;
         align-items: center;
-        gap: 8px;
+        gap: 4px;
 
         & div {
             height: 100%;
@@ -80,7 +88,7 @@
         background-color: #0001;
     }
     .copylink svg:hover {
-        fill: hsl(0, 20%, 40%);
+        fill: hsl(0, 25%, 35%);
     }
     .misskey svg:hover{
         fill: #99cc01;
@@ -89,6 +97,10 @@
         fill: #000;
     }
     .twitter svg:hover {
-        fill: #1da1f2;
+        fill: hsl(203, 89%, 53%);
+        fill: hsl(203, 100%, 70%);
+    }
+    .rss svg:hover {
+        fill: orange;
     }
 </style>

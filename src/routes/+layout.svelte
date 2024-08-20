@@ -1,8 +1,12 @@
 <script lang="ts">
-    let y: number = 0;
+    import '../app.css';
+    import { browser } from '$app/environment';
+
+    let y:number = 0;
     let header;
-    $: header = y<25 ? '':'hide'
-    console.log("%cスクリプト実行しろ\nは全て詐欺です。", "font-size:10em;color:red;font-weight:bold;")
+    $: header = y<25 ? '':'hide';
+
+    if (browser==true){console.log("%cスクリプト実行しろ\nは全て詐欺です。", "font-size:10em;color:red;font-weight:bold;")}
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -14,7 +18,7 @@
         <div id='h-container' class={header}>
             <div id='headercontents'>
                 <svg id="title" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50">
-                    <a href="/">
+                    <a href="/" style="text-decoration:none;">
                         <text x="0" y="35" textLength='200' font-family="Monaco" font-size="36" fill="#fff">moris.day</text>
                     </a>
                 </svg>
@@ -36,7 +40,7 @@
         </div>
         <footer>
             <div id="footercontents">
-                <div id="ftitle">moris.day<span>_</span></div>
+                <div id="ftitle">moris.day<span class="underline">_</span></div>
                 <div id='footlink'>
                     <dl>
                         <dt>Site Map</dt>
@@ -46,15 +50,9 @@
                     </dl>
                     <dl>
                         <dt>SNS</dt>
-                        <dd>
-                            <a target="_blank" href="https://mi.moris.day/@moris">Misskey</a>
-                        </dd>
-                        <dd>
-                            <a target="_blank" href="https://github.com/cocoyayann">Github</a>
-                        </dd>
-                        <dd>
-                            <a target="_blank" href="https://twitter.com/cocoyayan">Twitter</a>
-                        </dd>
+                        <dd><a target="_blank" href="https://mi.moris.day/@moris">Misskey</a></dd>
+                        <dd><a target="_blank" href="https://github.com/cocoyayann">Github</a></dd>
+                        <dd><a target="_blank" href="https://twitter.com/cocoyayan">Twitter</a></dd>
                     </dl>
                 </div>
                 <div id="coffee"><a href="https://www.amazon.jp/hz/wishlist/ls/1OA6N018YLSF0?ref_=wl_share" target="_blank">☕️ Buy me a coffee</a></div>
@@ -68,21 +66,22 @@
 
 
 <style>
-    #contents {
+    /*#contents {
+        transition: all 10s;
+        --theme-color: hsl(85, 50%, 60%);
         --color-scheme: light;
-        --theme-color: hsl(85, 50%, 60%); /*hsl(85, 50%, 60%), #a1cc66*/
-        --back-color: hsl(60, 100%, 98%); /*hsl(60, 100%, 98%),#fffff5*/
+        --back-color: hsl(60, 100%, 98%);
         --font-color: #222;
         --grid-color: #fff;
 
         @media(prefers-color-scheme: dark){
             --color-scheme: dark;
-            --theme-color: teal;
+            --theme-color: hsl(180, 100%, 25%);
             --back-color: #323436;
             --font-color: #fafafa;
             --grid-color: #444;
         }
-    }
+    }*/
     #contents {
         display: flex;
         flex-direction: column;
@@ -165,7 +164,7 @@
 
     #article {
         flex-grow: 1;
-        margin: 4%;
+        margin: 3%;
     }
 
     footer {
@@ -212,29 +211,15 @@
         }
         & #coffee{display:none;}
     }
-    #ftitle > span {
+    .underline {
         animation: 1.5s step-end infinite underline;
     }
     @keyframes underline {
-        0% {
-            visibility: visible;
-        }
-        50% {
-            visibility: hidden;
-        }
-    }
-
-
-    :global(body) {
-        margin: 0;
+        0% {visibility: visible;}
+        50% {visibility: hidden;}
     }
 
     @media (scripting: none) {
-        :global(.js) {display: none;}
         header{height:50px !important;}
-    }
-
-    :global(li) {
-        height: 22px;
     }
 </style>

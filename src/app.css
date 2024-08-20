@@ -1,0 +1,44 @@
+@property --theme-color {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: hsl(85, 50%, 60%);
+}
+
+:root {
+    --color-scheme: light;
+    --theme-color: hsl(85, 50%, 60%);
+    --back-color: hsl(60, 100%, 98%);
+    --font-color: #222;
+    --grid-color: #fff;
+    --code-color: #ddd;
+}
+
+@media(prefers-color-scheme: dark){
+    :root {
+        --color-scheme: dark;
+        --theme-color: hsl(180, 100%, 25%);
+        --back-color: hsl(210, 4%, 20%);
+        --font-color: #fafafa;
+        --grid-color: #444;
+        --code-color: #445;
+    }
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--theme-color);
+}
+a:visited {
+    color: hsl(290, 40%, 50%);
+}
+a:hover {
+    text-decoration: underline;
+}
+
+@media (scripting: none) {
+    :global(.js) {display: none;}
+}

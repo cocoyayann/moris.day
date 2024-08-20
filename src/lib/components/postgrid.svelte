@@ -20,18 +20,24 @@
         height: 100%;
         flex-direction: column;
         position: relative;
+        background-color: var(--grid-color);
     }
 
     .thumbnail {
         aspect-ratio: 1/0.6;
         width: 100%;
         max-height: 200px;
+        /*overflow: hidden;*/
 
         & img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform .2s;
         }
+        /*& img:hover {
+            transform: scale(1.1);
+        }*/
 
         & .tag{
             position: absolute;
@@ -54,7 +60,6 @@
         flex-grow: 1;
         height: 100%;
         width: 100%;
-        background-color: var(--grid-color);
         color: var(--font-color);
 
         & .title{

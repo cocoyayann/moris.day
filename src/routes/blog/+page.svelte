@@ -24,10 +24,6 @@
 		gap: 24px;
 		justify-content: center;
 		margin: 0 3%;
-		/*@media(width<720px) {
-			display: flex;
-			flex-direction: column;
-		}*/
 	}
 	.post {
 		border-radius: 8px;

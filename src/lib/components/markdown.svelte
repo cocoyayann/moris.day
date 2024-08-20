@@ -29,14 +29,6 @@
 <style>    
     .markdown {
         width: 100%;
-        --code-bg: #ddd;
-        --pre-color: #445;
-
-        @media(prefers-color-scheme:dark){
-            --code-bg: #333;
-            --pre-color: #445;
-        }
-
 
         & h1 {
             font-size: 2em;
@@ -75,7 +67,7 @@
             margin: 0 3px;
             padding: 0 3px;
             border-radius: 3px;
-            background-color: var(--code-bg);
+            background-color: var(--code-color);
         }
         & pre {
             width: fit-content;
@@ -83,7 +75,7 @@
             padding: 8px;
             box-sizing: border-box;
             border-radius: 8px;
-            background-color: var(--pre-color);
+            background-color: #445;
             color: #d1d9e1;
             overflow-x: scroll;
             & code {

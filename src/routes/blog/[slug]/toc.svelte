@@ -28,6 +28,7 @@
         background-color: #0002;
     }
     a {
+        display: block;
         text-decoration: none;
         color: var(--font-color)
     }
