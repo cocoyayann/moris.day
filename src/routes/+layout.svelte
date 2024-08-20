@@ -67,22 +67,6 @@
 
 
 <style>
-    /*#contents {
-        transition: all 10s;
-        --theme-color: hsl(85, 50%, 60%);
-        --color-scheme: light;
-        --back-color: hsl(60, 100%, 98%);
-        --font-color: #222;
-        --grid-color: #fff;
-
-        @media(prefers-color-scheme: dark){
-            --color-scheme: dark;
-            --theme-color: hsl(180, 100%, 25%);
-            --back-color: #323436;
-            --font-color: #fafafa;
-            --grid-color: #444;
-        }
-    }*/
     #contents {
         display: flex;
         flex-direction: column;
@@ -169,7 +153,7 @@
     }
 
     footer {
-        font-family: monospace;
+        font-family: "Monaco", monospace;
         height: fit-content;
         background-color: var(--theme-color);
         color: white;
@@ -199,7 +183,7 @@
 
         & #ftitle {
             font-size: 40px;
-            font-family: Monaco, monospace;
+            font-family: "Monaco", monospace;
             margin-bottom: 20px;
             max-width: 500px;
         }
