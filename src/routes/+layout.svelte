@@ -19,8 +19,9 @@
             <div id='headercontents'>
                 <svg id="title" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50">
                     <a href="/" style="text-decoration:none;">
-                        <text x="0" y="35" textLength='200' font-family="Monaco" font-size="36" fill="#fff">moris.day</text>
+                        <text class="logotxt" x="0" y="35" textLength='200'>moris.day</text>
                     </a>
+                    <style>.logotxt{font-family:"Monaco",monospace; font-size:36px; fill:#fff;}</style>
                 </svg>
             </div>
             <div id="octocat">
