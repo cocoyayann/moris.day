@@ -33,7 +33,7 @@ a {
     color: var(--theme-color);
 }
 a:visited {
-    color: hsl(290, 40%, 50%);
+    color: #a14db3;
 }
 a:hover {
     text-decoration: underline;
