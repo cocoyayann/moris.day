@@ -16,7 +16,7 @@
 <style>
     ul {
         margin: 0;
-        padding: 4px 4px 4px 30px;
+        padding: 2px 10px 10px 30px;
         font-size: .9rem;
     }
     li {
