@@ -85,6 +85,7 @@
 				background-color: var(--grid-color);
 				border-radius: 8px;
 				box-shadow: 0 0 6px #1111;
+				overflow: hidden;
 		}
 
 		& #toc {
