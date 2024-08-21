@@ -54,7 +54,6 @@
 				<Toc toclist={data.heading}></Toc>
 			</div>
 		</div>
-		<div style='flex-grow:1;'></div>
 	</aside>
 </div>
 
