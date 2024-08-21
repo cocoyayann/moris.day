@@ -45,13 +45,13 @@
 	<aside>
 		<div id='side'>
 			<div>
-				<Share share={{url:`https://moris.day/blog/${data.id}`, title:data.metadata.title}} />
+				<Profile></Profile>
 			</div>
 			<div id='toc'>
 				<Toc toclist={data.heading}></Toc>
 			</div>
 			<div>
-				<Profile></Profile>
+				<Share share={{url:`https://moris.day/blog/${data.id}`, title:data.metadata.title}} />
 			</div>
 		</div>
 		<div style='flex-grow:1;'></div>
