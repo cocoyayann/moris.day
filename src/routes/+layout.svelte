@@ -2,12 +2,12 @@
     import '../app.css';
     import { onMount } from 'svelte';
     
-    let scrolled: boolean = true;
-    $: header = scrolled ? '':'hide';
+    let scrollObserver: boolean = true;
+    $: header = scrollObserver ? '':'hide';
 
     onMount(()=>{
         let observer = new IntersectionObserver(
-            (entries)=>{scrolled = entries[0].isIntersecting},
+            (entries)=>{scrollObserver = entries[0].isIntersecting},
             {rootMargin: "25px",threshold: 0}
         );
         observer.observe(document.querySelector("#scroll")!)
@@ -85,7 +85,7 @@
         left: 0;
         height: 100px;
         z-index: 10;
-        @media(width<720px) {
+        @media(width<1000px) {
             height: 50px;
         }
     }
@@ -98,7 +98,7 @@
     #h-container.hide {
         height: 50px;
         transition: height .4s, transform .5s;;
-        @media(width<720px) {
+        @media(width<1000px) {
             transform: translate(0px,-50px);
         }
     }
@@ -124,7 +124,7 @@
         height: 100%;
         aspect-ratio: 1;
         clip-path: polygon(0 0, 100% 0, 100% 100%);
-        @media (width<720px) {
+        @media (width<1000px) {
 			display: none;
 		}
         & .octo-arm,.octo-body {
