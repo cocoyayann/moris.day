@@ -172,9 +172,8 @@
             display: flex;
             align-items: center;
             justify-content: space-around;
-            width: 85%;
             height: 85%;
-            margin: 25px auto;
+            margin: 25px;
             @media(width < 720px) {
                 flex-direction: column;
                 row-gap: 20px;
