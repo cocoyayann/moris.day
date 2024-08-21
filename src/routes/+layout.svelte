@@ -18,7 +18,7 @@
         <div id='h-container' class={header}>
             <div id='headercontents'>
                 <svg id="title" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50">
-                    <a href="/" style="text-decoration:none;">
+                    <a href="/" style="text-decoration:none;" aria-label="トップページ">
                         <text class="logotxt" x="0" y="35" textLength='200'>moris.day</text>
                     </a>
                     <style>.logotxt{font-family:"Monaco",monospace; font-size:36px; fill:#fff;}</style>
@@ -26,7 +26,7 @@
             </div>
             <div id="octocat">
                 <svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
-                    <a target="_blank" href="https://github.com/cocoyayann/moris.day/">
+                    <a target="_blank" href="https://github.com/cocoyayann/moris.day/" aria-label="ソースコードを表示">
                         <rect class="octo-back" width="100%" height="100%"></rect>
                         <path class="octo-arm"  d="M128.3,109C113.8,99.7 119,89.6 119,89.6C122,82.7 120.5,78.6 120.5,78.6C119.2,72 123.4,76.3 123.4,76.3C127.3,81 125.5,87.3 125.5,87.3C123,97.6 130.6,102 134.4,103.2" style="transform-origin: 130px 106px;"></path>
                         <path class="octo-body" d="M115,115C115,115 118.7,116.5 119.8,115.4L133.7,101.6C137,99.2 140,98.4 142.2,98.6C133.8,88 127.5,74.4 143.8,58C148.5,53.4 154,51.2 159.7,51C160.3,49.4 163.2,43.6 171.4,40C171.4,40 176,42.5 178.8,56.2C183,58.6 187.2,61.8 191,65.4C194.5,69 197.7,73.2 200,77.6C213.8,80.2 216.3,85 216.3,85C212.7,93 207,96 205.4,96.6C205.1,102.4 203,107.8 198.3,112.5C182,129 168.3,122.5 157.7,114C158,117 156.7,121 152.7,125 L141,136.5C139.8,137.7 141.6,142 141.8,141.8Z"></path>
