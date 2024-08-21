@@ -44,5 +44,6 @@
         padding: 0 10px 10px 10px;
         font-size: 0.9em;
         text-align: center;
+        line-height: 1.8;
     }
 </style>
