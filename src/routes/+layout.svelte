@@ -2,7 +2,7 @@
     import '../app.css';
     import { onMount } from 'svelte';
     
-    let scrolled: boolean;
+    let scrolled: boolean = true;
     $: header = scrolled ? '':'hide';
 
     onMount(()=>{
