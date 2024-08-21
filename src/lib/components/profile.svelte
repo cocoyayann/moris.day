@@ -1,6 +1,6 @@
 <div class="profile" aria-label="プロフィール">
     <div>
-        <div class="space topspace">Profile</div>
+        <div class="space topspace"></div>
         <div class="icon">
             <img src="/my_icon_256x256.webp" alt="moris icon">
         </div>
@@ -19,9 +19,6 @@
     .topspace {
         height: 60px;
         background-color: color-mix(in srgb, var(--theme-color) 25%, var(--back-color));
-        padding: 4px 8px;
-
-        font-size: 0.85em;
     }
     .bottomspace {
         height: 40px;
