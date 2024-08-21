@@ -47,11 +47,11 @@
 			<div>
 				<Profile></Profile>
 			</div>
-			<div id='toc'>
-				<Toc toclist={data.heading}></Toc>
-			</div>
 			<div>
 				<Share share={{url:`https://moris.day/blog/${data.id}`, title:data.metadata.title}} />
+			</div>
+			<div id='toc'>
+				<Toc toclist={data.heading}></Toc>
 			</div>
 		</div>
 		<div style='flex-grow:1;'></div>
