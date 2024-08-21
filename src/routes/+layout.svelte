@@ -1,19 +1,24 @@
 <script lang="ts">
     import '../app.css';
-    import { browser } from '$app/environment';
+    import { onMount } from 'svelte';
+    
+    let scrolled: boolean;
+    $: header = scrolled ? '':'hide';
 
-    let y:number = 0;
-    let header;
-    $: header = y<25 ? '':'hide';
+    onMount(()=>{
+        let observer = new IntersectionObserver(
+            (entries)=>{scrolled = entries[0].isIntersecting},
+            {rootMargin: "25px",threshold: 0}
+        );
+        observer.observe(document.querySelector("#scroll")!)
+    });
 
-    if (browser==true){console.log("%cスクリプト実行しろ\nは全て詐欺です。", "font-size:10em;color:red;font-weight:bold;")}
+    onMount(()=>console.log("%cスクリプト実行しろ\nは全て詐欺です。", "font-size:10em;color:red;font-weight:bold;"));
 </script>
-
-<svelte:window bind:scrollY={y} />
-
 
 
 <div id="contents">
+    <div id="scroll"></div>
     <header>
         <div id='h-container' class={header}>
             <div id='headercontents'>
