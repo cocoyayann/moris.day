@@ -8,7 +8,7 @@
     </div>
 
     <div class="discription">
-        <span>有機化学好きの大学生<br>電子工作やプログラムもいじります<br>ご連絡は<a href="https://mi.moris.day/@moris">Misskey</a>から<br>誤字などは<a href="https://github.com/cocoyayann">Github</a>のissueへ</span>
+        <span>有機化学好きの大学生<br>電子工作やプログラムもいじります<br>ご連絡は<a href="https://mi.moris.day/@moris" target="_blank">Misskey</a>から<br>誤字などは<a href="https://github.com/cocoyayann" target="_blank">Github</a>のissueへ</span>
     </div>
 </div>
 
