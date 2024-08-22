@@ -8,7 +8,7 @@
     </div>
 
     <div class="discription">
-        <span>有機化学好きの大学生<br>電子工作やプログラムもいじります<br>ご連絡は<a href="https://mi.moris.day/@moris">Misskey</a> or <a href="https://github.com/cocoyayann">Github</a>から</span>
+        <span>有機化学好きの大学生<br>電子工作やプログラムもいじります<br>ご連絡は<a href="https://mi.moris.day/@moris">Misskey</a>から<br>誤字などは<a href="https://github.com/cocoyayann">Github</a>のissueへ</span>
     </div>
 </div>
 
@@ -17,20 +17,19 @@
         position: relative;
     }
     .topspace {
-        height: 60px;
+        height: 55px;
         background-color: color-mix(in srgb, var(--theme-color) 25%, var(--back-color));
     }
     .bottomspace {
-        height: 40px;
+        height: 45px;
     }
     .icon {
         position: absolute;
-        margin: 0 auto;
-        padding: 4px;
+        padding: 6px;
         border-radius: 50%;
         width: 70px;
-        top: calc(60px - 35px);
-        left: calc(50% - 35px);
+        top: 14px;/*calc(55px - 35px - 6px);*/
+        left: 115px;/*calc(50% - 35px);*/
         background-color: var(--grid-color);
     }
     img {
