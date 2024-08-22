@@ -95,19 +95,19 @@
             & p::before {
                 display: inline-block;
                 content: '“';
-                font-family: "ヒラギノ角ゴ Pro W3", sans-serif;
+                font-family: Arial, Helvetica, sans-serif;
                 font-size: 3rem;
                 position: absolute;
-                top: -1.5rem;
-                left: -1.6rem;
+                top: -1rem;
+                left: -1.2rem;
             }
             & p::after {
                 display: inline-block;
                 content: '”';
-                font-family: "ヒラギノ角ゴ Pro W3", sans-serif;
+                font-family: Arial, Helvetica, sans-serif;
                 font-size: 3rem;
                 position: absolute;
-                bottom: -3rem;
+                bottom: -2.5rem;
                 right: -0.8rem;
             }
         }
