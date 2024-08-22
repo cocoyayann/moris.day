@@ -62,18 +62,14 @@
 	#blog-container {
 		display: flex;
 		gap: 20px;
-		width: 100%;
-		height: fit-content;
-		margin: 1px;
 	}
 	aside {
-		min-width: 280px;
-		width: 20%;
 		@media (width<1000px) {
 			display: none;
 		}
 	
 		& #side {
+			width: 300px;
 			display: flex;
 			flex-direction: column;
 			row-gap: 20px;
