@@ -28,8 +28,8 @@
         padding: 6px;
         border-radius: 50%;
         width: 70px;
-        top: 14px;/*calc(55px - 35px - 6px);*/
-        left: 115px;/*calc(50% - 35px);*/
+        top: 14px;  /*calc(55px - 35px - 6px);*/
+        left: 109px;  /*calc(50% - 35px - 6px);*/
         background-color: var(--grid-color);
     }
     img {
