@@ -149,7 +149,6 @@
         flex-direction: column;
         flex-grow: 1;
         color: var(--font-color);
-        font-family: system-ui, sans-serif;
     }
 
     #article {

@@ -26,6 +26,7 @@
 
 body {
     margin: 0;
+    font-family: "-apple-system", "BlinkMacSystemFont", "Hiragino Kaku Gothic ProN", "Noto Sans CJK JP", "Segoe UI", "Meiryo", sans-serif;
 }
 
 a {
