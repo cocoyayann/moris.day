@@ -2,7 +2,7 @@
     <div>
         <div class="space topspace"></div>
         <div class="icon">
-            <img src="/my_icon_256x256.webp" alt="moris icon">
+            <img src="/icon_192.webp" alt="moris icon">
         </div>
         <div class="space bottomspace"></div>
     </div>
