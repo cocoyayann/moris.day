@@ -18,7 +18,7 @@
 
 <div style="margin:4px 0 0 8px;color:#aaaa;font-size:0.85em">Share</div>
 <div id="share">
-    <button class='copylink' type="button" on:click={copylink} aria-label="urlをコピー">
+    <button class='link' type="button" on:click={copylink} aria-label="urlをコピー">
         {#if copyed}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M620-163 450-333l56-56 114 114 226-226 56 56-282 282Zm220-397h-80v-200h-80v120H280v-120h-80v560h240v80H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h167q11-35 43-57.5t70-22.5q40 0 71.5 22.5T594-840h166q33 0 56.5 23.5T840-760v200ZM480-760q17 0 28.5-11.5T520-800q0-17-11.5-28.5T480-840q-17 0-28.5 11.5T440-800q0 17 11.5 28.5T480-760Z"/></svg>
         {:else}
@@ -48,49 +48,34 @@
 </div>
 
 <style>
+    #share {
+        display: flex;
+        gap: 4px;
+        height: 36px;
+        padding: 5px;
+
+        &>* {
+            height: 100%;
+            flex: 1;
+            border-radius: 3px;
+            &:hover {
+                background-color: #0001;
+            }
+        }
+    }
     button {
         all: unset;
-        height: 100%;
     }
     svg {
-        display: block;
-        margin: 0 auto;
-        max-height: 100%;
-        max-width:100%;
+        height: 100%;
+        width: 100%;
         fill: #aaaa;
         transition: fill .2s;
     }
-    #share {
-        display: flex;
-        height: 36px;
-        padding: 5px;
-        justify-content:space-between;
-        align-items: center;
-        gap: 4px;
-    }
-    #share>* {
-        height: 100%;
-        flex-grow: 1;
-        border-radius: 3px;
-        overflow: hidden;
-        & :hover {
-        background-color: #0001;
-    }
-    }
 
-    .copylink svg:hover {
-        fill: hsl(0, 25%, 35%);
-    }
-    .misskey svg:hover{
-        fill: #99cc01;
-    }
-    .threads svg:hover{
-        fill: #000;
-    }
-    .twitter svg:hover {
-        fill: hsl(203, 100%, 70%);
-    }
-    .rss svg:hover {
-        fill: orange;
-    }
+    .link svg:hover    {fill: hsl(0, 25%, 35%);}
+    .misskey svg:hover {fill: hsl(75, 99%, 40%);}
+    .threads svg:hover {fill: black;}
+    .twitter svg:hover {fill: hsl(203, 100%, 70%);}
+    .rss svg:hover     {fill: orange;}
 </style>
