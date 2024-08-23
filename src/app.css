@@ -4,7 +4,7 @@
     initial-value: hsl(85, 50%, 60%);
 }
 
-:root {
+body, body.light {
     --color-scheme: light;
     --theme-color: hsl(85, 50%, 60%);
     --back-color: hsl(60, 100%, 98%);
@@ -13,8 +13,17 @@
     --code-color: #ddd;
 }
 
+body.dark {
+    --color-scheme: dark;
+    --theme-color: hsl(180, 100%, 25%);
+    --back-color: hsl(210, 4%, 20%);
+    --font-color: #fafafa;
+    --grid-color: #444;
+    --code-color: #445;
+}
+
 @media(prefers-color-scheme: dark){
-    :root {
+    body {
         --color-scheme: dark;
         --theme-color: hsl(180, 100%, 25%);
         --back-color: hsl(210, 4%, 20%);
@@ -42,7 +51,7 @@ a {
     }
     &:visited {
         color: #a14db3;  /*hsl(289, 40%, 50%);*/
-}
+    }
 }
 
 @media (scripting: none) {
