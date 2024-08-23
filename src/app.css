@@ -36,12 +36,13 @@ code {
 a {
     text-decoration: none;
     color: var(--theme-color);
+
+    &:hover {
+        text-decoration: underline;
+    }
+    &:visited {
+        color: #a14db3;  /*hsl(289, 40%, 50%);*/
 }
-a:visited {
-    color: #a14db3;
-}
-a:hover {
-    text-decoration: underline;
 }
 
 @media (scripting: none) {
