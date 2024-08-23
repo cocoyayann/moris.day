@@ -55,5 +55,5 @@ a {
 }
 
 @media (scripting: none) {
-    :global(.js) {display: none;}
+    .js {display: none;}
 }
