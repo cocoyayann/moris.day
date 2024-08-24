@@ -2,7 +2,7 @@
     <div>
         <div class="space topspace"></div>
         <div class="icon">
-            <img src="/icon_192.webp" alt="moris icon">
+            <img src="/icon_192.webp" width="192" height="192" alt="moris icon">
         </div>
         <div class="space bottomspace"></div>
     </div>
@@ -28,12 +28,14 @@
         padding: 6px;
         border-radius: 50%;
         width: 70px;
+        height: 70px;
         top: 14px;  /*calc(55px - 35px - 6px);*/
         left: 109px;  /*calc(50% - 35px - 6px);*/
         background-color: var(--grid-color);
     }
     img {
         width: 100%;
+        height: 100%;
         border-radius: 50%;
     }
     .discription {
