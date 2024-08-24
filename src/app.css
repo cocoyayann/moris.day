@@ -17,7 +17,7 @@ body.dark {
     --color-scheme: dark;
     --theme-color: hsl(180, 100%, 25%);
     --back-color: hsl(210, 4%, 20%);
-    --font-color: #fafafa;
+    --font-color: #f5f5f5;
     --grid-color: #444;
     --code-color: #445;
 }
