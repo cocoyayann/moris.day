@@ -29,6 +29,7 @@
 <style>    
     .markdown {
         width: 100%;
+        line-height: 1.8em;
 
         & h1 {
             font-size: 2em;
@@ -62,6 +63,10 @@
             border-left: 2px solid var(--header-line);
         }
         */
+
+        & p {
+            margin: 0 16px;
+        }
         & code {
             font-size: 1rem;
             margin: 0 3px;
