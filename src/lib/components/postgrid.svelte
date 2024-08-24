@@ -7,7 +7,7 @@
         {#if meta.thumbnail }
             <img src="/img/{meta.thumbnail}" alt='thumbnail' />
         {:else}
-            <img src='data:image/svg+xml,{encodeURIComponent('<svg fill="#eee" version="1.1" viewBox="0 -960 96 96" xmlns="http://www.w3.org/2000/svg"><path d="m41-903q-0.8 0-1.4-0.6t-0.6-1.4v-14q0-0.8 0.6-1.4t1.4-0.6h14q0.8 0 1.4 0.6t0.6 1.4v14q0 0.8-0.6 1.4t-1.4 0.6zm0-2h14v-14h-14zm1-2h12l-3.8-5-3 4-2.25-3zm-1 2v-14z"/></svg>')}' alt="fallback"/>
+            <img src='data:image/svg+xml,{encodeURIComponent('<svg fill="#aaa" version="1.1" viewBox="0 -960 96 96" xmlns="http://www.w3.org/2000/svg"><path d="m41-903q-0.8 0-1.4-0.6t-0.6-1.4v-14q0-0.8 0.6-1.4t1.4-0.6h14q0.8 0 1.4 0.6t0.6 1.4v14q0 0.8-0.6 1.4t-1.4 0.6zm0-2h14v-14h-14zm1-2h12l-3.8-5-3 4-2.25-3zm-1 2v-14z"/></svg>')}' alt="fallback"/>
         {/if}
 
         <div class="tag date">{meta.date.toLocaleDateString('sv-SE')}</div>
