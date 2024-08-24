@@ -42,6 +42,10 @@ code {
     font-family: "Source Code Pro", "Monaco", "Consolas", monospace;
 }
 
+em {
+    font-family: serif;
+}
+
 a {
     text-decoration: none;
     color: var(--theme-color);
