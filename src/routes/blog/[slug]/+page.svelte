@@ -25,12 +25,13 @@
 				<span class="txt">Category:</span>
 				<a class="tag" href='/blog/category/{data.metadata.category}'>{data.metadata.category}</a>
 
-				<span class="divider"></span>
-
-				<span class="txt">Tags:</span>
-				{#each data.metadata.tags as tag}
-					<a class='tag' href='/blog/tag/{tag}'>{tag}</a><wbr />
-				{/each}
+				{#if data.metadata.tags.length }
+					<span class="divider"></span>
+					<span class="txt">Tags:</span>
+					{#each data.metadata.tags as tag}
+						<a class='tag' href='/blog/tag/{tag}'>{tag}</a><wbr />
+					{/each}
+				{/if}
 			</div>
 			
 			<div class="date">
@@ -39,7 +40,9 @@
 			</div>
 		</div>
 
-		<img id="thumbnail" alt="thumbnail" src="/img/{data.metadata.thumbnail}">
+		{#if data.metadata.thumbnail != null}
+			<img id="thumbnail" alt="thumbnail" src="/img/{data.metadata.thumbnail}">
+		{/if}
 		<Markdown mdtext={data.post} />
 	</div>
 	<aside>
@@ -113,6 +116,7 @@
 			width: 100%;
 			max-height: 50vh;
 			object-fit: contain;
+			margin-bottom: 12px;
 		}
 	}
 
