@@ -80,7 +80,7 @@
             padding: 8px;
             box-sizing: border-box;
             border-radius: 8px;
-            background-color: #445;
+            background-color: #30303a;
             color: #d1d9e1;
             overflow-x: scroll;
             & code {
@@ -94,26 +94,29 @@
             position: relative;
             font-style: italic;
             width: fit-content;
+            padding: .5em 0;
             border-top: 1px solid var(--font-color);
             border-bottom: 1px solid var(--font-color);
 
             & p::before {
-                display: inline-block;
-                content: '“';
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 3rem;
+                content: '';
+                mask-image: url('data:image/svg+xml;utf-8,<svg version="1.1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="m57.2 36.6-4.3 20.4h-20.5l3.8-17.9q3.3-16 10.4-23.5 7.2-7.5 16.8-8.6l-1.6 7.9q-11.7 3.2-15.7 21.7zm-31.8 0-4.3 20.4h-20.5l3.8-17.9q3.3-16 10.4-23.5 7.2-7.5 16.8-8.6l-1.6 7.9q-11.7 3.2-15.7 21.7z"/></svg>');
+                width: .8em;
+                height: .8em;
                 position: absolute;
-                top: -1rem;
-                left: -1.2rem;
+                background-color: var(--font-color);
+                top: -.3em;
+                left: -.9em;
             }
             & p::after {
-                display: inline-block;
-                content: '”';
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 3rem;
+                content: '';
+                mask-image: url('data:image/svg+xml;utf-8,<svg version="1.1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="m6.8 27.4 4.3-20.4h20.5l-3.8 17.9q-3.3 16-10.4 23.5-7.17 7.5-16.8 8.6l1.6-7.9q11.7-3.2 15.7-21.7zm31.8 0 4.3-20.4h20.5l-3.8 17.9q-3.3 16-10.4 23.5-7.17 7.5-16.8 8.6l1.6-7.9q11.7-3.2 15.7-21.7z"/></svg>');
+                width: .8em;
+                height: .8em;
                 position: absolute;
-                bottom: -2.5rem;
-                right: -0.8rem;
+                background-color: var(--font-color);
+                bottom: -.3em;
+                right: -.9em;
             }
         }
     }
