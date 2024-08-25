@@ -13,7 +13,9 @@
 	<meta property="og:title" content="{data.metadata.title}">
 	<meta property="og:url" content="https://moris.day/blog/{data.id}">
 	<meta property="og:description" content="{data.metadata.description}">
+	{#if data.metadata.thumbnail != null}
 	<meta property="og:image" content="https://moris.day/img/{data.metadata.thumbnail}">
+	{/if}
 </svelte:head>
 
 <div id='blog-container'>
