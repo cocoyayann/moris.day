@@ -14,7 +14,7 @@
 	<meta property="og:url" content="https://moris.day/blog/{data.id}">
 	<meta property="og:description" content="{data.metadata.description}">
 	{#if data.metadata.thumbnail != null}
-	<meta property="og:image" content="https://moris.day/img/{data.metadata.thumbnail}">
+		<meta property="og:image" content="https://moris.day/img/{data.metadata.thumbnail}">
 	{/if}
 </svelte:head>
 
@@ -45,7 +45,7 @@
 		{#if data.metadata.thumbnail != null}
 			<img id="thumbnail" alt="thumbnail" src="/img/{data.metadata.thumbnail}">
 		{/if}
-		<Markdown mdtext={data.post} />
+			<Markdown mdtext={data.post} />
 	</div>
 	<aside>
 		<div id='side'>
@@ -118,7 +118,9 @@
 			width: 100%;
 			max-height: 50vh;
 			object-fit: contain;
-			margin-bottom: 12px;
+		}
+		& #md {
+			margin: 25px 0;
 		}
 	}
 
