@@ -29,6 +29,8 @@
 			</div>
 
 			{#if data.metadata.tags.length }
+			<div class="divider"></div>
+
 			<div class="tags">
 				<span class="txt">Tags:</span>
 				{#each data.metadata.tags as tag}
@@ -112,9 +114,6 @@
 			margin: 0;
 			padding: 5px;
 			border-bottom: 1px solid;
-			@media(width<480px){
-				font-size: 1.7em;
-			}
 		}
 		& #thumbnail {
 			width: 100%;
@@ -129,7 +128,7 @@
 	.meta {
 		display: grid;
 		grid-template-rows: auto auto;
-		grid-template-columns: auto 1fr auto;
+		grid-template-columns: auto auto 1fr auto;
 		gap: 8px;
 		font-size: 0.95em;
 		margin: 8px;
@@ -146,12 +145,18 @@
 
 		& .tags {
 			grid-row: 1;
-			grid-column: 2;
+			grid-column: 3;
+			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			@media(width<1000px) {
 				grid-row: 2;
-				grid-column: 1 / 4;
+				grid-column: 1 / 5;
+			}
+			@media(width<480px){
+				display: inline-block;
+				grid-row: 1;
+				grid-column: 3;
 			}
 		}
 
@@ -163,19 +168,36 @@
 			padding: 0 4px 1px 4px;
 			margin: 3px;
 		}
+
+		& .divider {
+			display: inline-block;
+			width: 1px;
+			margin: 3px 0;
+			background-color: var(--font-color);
+			grid-row: 1;
+			grid-column: 2;
+			@media(480px<width<1000px){
+				display: none;
+			}
+		}
 		& .date{
 			display: flex;
 			grid-row: 1;
-			grid-column: 3;
+			grid-column: 4;
 			vertical-align: middle;
 			align-items: center;
+			@media(width<480px){
+				display: inline-block;
+				grid-row: 2;
+				grid-column: 1 / 5;
+			}
 		}
 		& .date svg{
 			height: 1rem;
 			fill: var(--font-color);
 			vertical-align: middle;
 		}
-		@media(width<360px) {
+		@media(width<480px) {
 			& .txt {display: none;}
 		}
 	}
