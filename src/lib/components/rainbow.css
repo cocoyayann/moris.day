@@ -54,8 +54,7 @@ Style with support for rainbow parens
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal,
-.hljs-type,
-.hljs-addition {
+.hljs-type {
   color: #cc99cc;
 }
 
@@ -102,6 +101,10 @@ Style with support for rainbow parens
 
 .hljs-deletion {
   color: #dc322f;
+}
+
+.hljs-addition {
+  color: #68dc2e
 }
 
 .hljs-formula {
