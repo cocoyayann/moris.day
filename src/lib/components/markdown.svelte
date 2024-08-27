@@ -67,6 +67,13 @@
             margin: 0 16px;
             line-height: 1.8em;
         }
+
+        & img {
+            display: block;
+            width: 90%;
+            margin: 1em auto;
+        }
+
         & code {
             font-size: 1rem;
             margin: 0 3px;
