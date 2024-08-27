@@ -83,6 +83,7 @@
         top: 0;
         left: 0;
         height: 100px;
+        transition: height .2s;
         z-index: 10;
         @media(width<1000px) {
             height: 50px;

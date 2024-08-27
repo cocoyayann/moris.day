@@ -30,7 +30,7 @@
         width: 70px;
         height: 70px;
         top: 14px;  /*calc(55px - 35px - 6px);*/
-        left: 109px;  /*calc(50% - 35px - 6px);*/
+        left: calc(50% - 41px);  /*calc(50% - 35px - 6px);*/
         background-color: var(--grid-color);
     }
     img {

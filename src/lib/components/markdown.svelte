@@ -68,6 +68,10 @@
             line-height: 1.8em;
         }
 
+        & li {
+            line-height: 1.5em;
+        }
+
         & img {
             display: block;
             width: 90%;
@@ -82,8 +86,6 @@
             background-color: var(--code-color);
         }
         & pre {
-            width: fit-content;
-            max-width: 100%;
             padding: 8px;
             box-sizing: border-box;
             border-radius: 8px;
