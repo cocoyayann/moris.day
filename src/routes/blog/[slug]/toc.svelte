@@ -7,7 +7,7 @@
     <div style="margin:4px 0 0 8px;color:#aaaa;font-size:0.85em;">目次</div>
     <ul>
         {#each toclist as toc}
-            <li class="dep-{toc.depth}"><a href='#{toc.title.replace(/_| /g,"-").replaceAll(/\.|!/g, "").toLowerCase()}'>{toc.title}</a></li>
+            <li class="dep-{toc.depth}"><a href='#{toc.title.replace(/_| /g,"-").replaceAll(/\.|!|\(|\)/g, "").toLowerCase()}'>{toc.title}</a></li>
         {/each}
     </ul>
 </nav>
