@@ -10,13 +10,15 @@ export const GET: RequestHandler = async () => {
 
     posts().slice(0,15).map((id)=>{
         let meta = readmd(id).metadata
+        let link = `https://moris.day/blog/${id}`
 
         items += `
         <item>
             <title>${meta.title}</title>
             <description>${meta.description}</description>
-            <link>https://moris.day/blog${id}</link>
+            <link>${link}</link>
             <pubDate>${meta.date.toUTCString()}</pubDate>
+            <guid>${link}</guid>
         </item>`
     })
 
