@@ -18,8 +18,8 @@
 	{/if}
 </svelte:head>
 
-<div id='blog-container'>
-	<div id='main-container'>
+<div id='blog'>
+	<article>
 		<h1 class="title">{data.metadata.title}</h1>
 
 		<div class="meta">
@@ -50,7 +50,7 @@
 		{/if}
 
 		<Markdown mdtext={data.post} />
-	</div>
+	</article>
 	<aside>
 		<div id='side'>
 			<div>
@@ -68,7 +68,7 @@
 
 
 <style>
-	#blog-container {
+	#blog {
 		display: flex;
 		gap: 20px;
 	}
@@ -98,7 +98,7 @@
 		}
 	}
 
-	#main-container {
+	article {
 		min-width: 0;
 		flex-grow: 1;
 		background-color: var(--back-color);
