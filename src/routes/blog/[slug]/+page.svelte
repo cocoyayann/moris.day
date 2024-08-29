@@ -102,7 +102,7 @@
 		min-width: 0;
 		flex-grow: 1;
 		background-color: var(--back-color);
-		padding: 0 24px;
+		padding: 0 20px;
 		border-radius: 8px;
 		@media(width<720px){
 			padding: 0;
