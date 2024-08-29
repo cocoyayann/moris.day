@@ -10,6 +10,7 @@
     import remarkgfm from 'remark-gfm'
     import remarkBreaks from "remark-breaks"
     import rehypeHighlight from 'rehype-highlight'
+    import rehypeExternalLinks from 'rehype-external-links'
 
     let md = remark()
         .use(remarkBreaks)   // 改行
@@ -17,6 +18,7 @@
         .use(remarkRehype)
         .use(rehypeslug)     // headingにidを設定
         .use(rehypeHighlight)// Syntax highlight
+        .use(rehypeExternalLinks, {target:'_blank', rel:['noreferrer','noopener']})// 外部サイトを新規タブで開く
         .use(rehypeStringify)
         .processSync(mdtext)
 
