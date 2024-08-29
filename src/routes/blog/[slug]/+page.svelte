@@ -13,7 +13,7 @@
 	<meta property="og:title" content="{data.metadata.title}">
 	<meta property="og:url" content="https://moris.day/blog/{data.id}">
 	<meta property="og:description" content="{data.metadata.description}">
-	{#if data.metadata.thumbnail != null}
+	{#if data.metadata.thumbnail}
 		<meta property="og:image" content="https://moris.day/img/{data.metadata.thumbnail}">
 	{/if}
 </svelte:head>
@@ -45,7 +45,7 @@
 			</div>
 		</div>
 
-		{#if data.metadata.thumbnail != null}
+		{#if data.metadata.thumbnail}
 			<img id="thumbnail" alt="thumbnail" src="/img/{data.metadata.thumbnail}">
 		{/if}
 

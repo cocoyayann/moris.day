@@ -9,7 +9,7 @@
 		{#each data.posts as post}
 			<div class="post">
 				<a style='text-decoration: none;' href="/blog/{post['id']}">
-					<Postgrid meta={post.meta}></Postgrid>
+					<Postgrid {...post.meta}></Postgrid>
 				</a>
 			</div>
 		{/each}
