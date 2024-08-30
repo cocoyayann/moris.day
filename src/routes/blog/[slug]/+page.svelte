@@ -127,8 +127,9 @@
 			object-fit: contain;
 		}
 		& .thumbnail.emoji {
-			margin: 30px auto;
+			margin: 7.5vh auto;
 			max-width: 40%;
+			max-height: 25vh;
 		}
 		& .md {
 			margin: 25px 0;
