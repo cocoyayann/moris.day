@@ -22,10 +22,8 @@
         font-size: .9rem;
     }
     li {
-        padding: 2px 4px;
+        padding: 4px;
         border-radius: 3px;
-        
-        list-style-position:inside;
     }
     li:hover {
         background-color: #0002;
