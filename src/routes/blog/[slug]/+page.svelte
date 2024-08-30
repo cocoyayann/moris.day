@@ -14,7 +14,7 @@
 	<meta property="og:url" content="https://moris.day/blog/{data.id}">
 	<meta property="og:description" content="{data.metadata.description}">
 	{#if data.metadata.thumbnail}
-		<meta property="og:image" content="https://moris.day/img/{data.metadata.thumbnail}">
+		<meta property="og:image" content="https://moris.day{data.metadata.thumbnail}">
 	{/if}
 </svelte:head>
 
@@ -46,7 +46,9 @@
 		</div>
 
 		{#if data.metadata.thumbnail}
-			<img id="thumbnail" alt="thumbnail" src="/img/{data.metadata.thumbnail}">
+			<img class="thumbnail" alt="thumbnail" src="{data.metadata.thumbnail}">
+		{:else if data.metadata.emoji}
+			<img class="thumbnail emoji" alt="thumbnail" src="{data.metadata.emoji}">
 		{/if}
 
 		<Markdown mdtext={data.post} />
@@ -115,12 +117,18 @@
 			padding: 5px;
 			border-bottom: 1px solid;
 		}
-		& #thumbnail {
+		& .thumbnail {
+			display: block;
+			margin: 0 auto;
 			width: 100%;
 			max-height: 50vh;
 			object-fit: contain;
 		}
-		& #md {
+		& .thumbnail.emoji {
+			margin: 30px auto;
+			max-width: 40%;
+		}
+		& .md {
 			margin: 25px 0;
 		}
 	}
