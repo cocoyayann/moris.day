@@ -58,6 +58,11 @@ a {
     }
 }
 
+img {
+	-webkit-user-drag: none;
+    user-select: none;
+}
+
 @media (scripting: none) {
     .js {display: none;}
 }
