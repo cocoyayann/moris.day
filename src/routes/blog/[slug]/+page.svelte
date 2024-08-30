@@ -51,7 +51,9 @@
 			<img class="thumbnail emoji" alt="thumbnail" src="{data.metadata.emoji}">
 		{/if}
 
-		<Markdown mdtext={data.post} />
+		<div class="md">
+			<Markdown mdtext={data.post} />
+		</div>
 	</article>
 	<aside>
 		<div id='side'>
