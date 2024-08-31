@@ -35,5 +35,10 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        &::before {
+            content: '・';
+            color: var(--font-color);
+        }
     }
 </style>
