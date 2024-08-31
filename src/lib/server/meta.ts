@@ -1,6 +1,7 @@
 export default meta
 
 import jsYaml from "js-yaml"
+import { parse } from '@twemoji/parser';
 import { error } from '@sveltejs/kit';
 
 function meta(fm_list: string) {
@@ -19,9 +20,7 @@ function meta(fm_list: string) {
 
             thumbnail = thumbnail? `/img/${thumbnail}` : ''
             if (emoji){
-                let codepoint = emoji.codePointAt(0)
-                //1f300-1f6ff,1f900-1faff,2600-2764
-                emoji = (codepoint && ((127744<=codepoint&&codepoint<=129791) || (9728<=codepoint&&codepoint<=10084)))?`https://cdn.jsdelivr.net/gh/jdecked/twemoji@latest/assets/svg/${codepoint.toString(16)}.svg`:''
+                emoji = parse(emoji)[0]?.url ?? ""
             }
 
             return {title, description,thumbnail,emoji,date,category,tags}

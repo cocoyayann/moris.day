@@ -25,6 +25,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@twemoji/parser": "^15.1.1",
 		"@types/node": "^20.14.10",
 		"highlight.js": "^11.10.0",
 		"js-yaml": "^4.1.0",
