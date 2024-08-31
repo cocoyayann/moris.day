@@ -46,6 +46,7 @@
             background-color: var(--theme-color);
         }
         & h2 {
+            padding-top: 25px;
             @media(width>999px){padding-top:50px;margin-top:0;}
         }
         & h2::before {
@@ -54,7 +55,7 @@
             margin-right: 4px;
             width: 3px;
             height: 1.2em;
-            vertical-align: bottom;
+            vertical-align: text-bottom;
             background-color: var(--theme-color);
         }
 
@@ -91,7 +92,7 @@
             padding: 8px;
             box-sizing: border-box;
             border-radius: 8px;
-            background-color: #30303a;
+            background-color: var(--code-block);
             color: #d1d9e1;
             overflow-x: scroll;
             & code {
