@@ -12,27 +12,30 @@ body, body.light {
     --grid-color: #fff;
     --code-color: #ddd;
     --code-block: #30303a;
+    --frame-shadow: #999;
 }
 
 body.dark {
     --color-scheme: dark;
     --theme-color: hsl(180, 100%, 25%);
-    --back-color: hsl(210, 7%, 17%);
+    --back-color: hsl(210, 7%, 18%);
     --font-color: #f5f5f5;
     --grid-color: #333;
     --code-color: #445;
     --code-block: #23232a;
+    --frame-shadow: #111;
 }
 
 @media(prefers-color-scheme: dark){
     body {
         --color-scheme: dark;
         --theme-color: hsl(180, 100%, 25%);
-        --back-color: hsl(210, 7%, 17%);
+        --back-color: hsl(210, 7%, 18%);
         --font-color: #fafafa;
         --grid-color: #333;
         --code-color: #445;
         --code-block: #23232a;
+        --frame-shadow: #111;
     }
 }
 
@@ -68,4 +71,12 @@ img {
 
 @media (scripting: none) {
     .js {display: none;}
+}
+
+::view-transition-old(*){
+    display: none;
+}
+
+::view-transition-new(*) {
+    animation: none;
 }

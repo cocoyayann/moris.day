@@ -46,9 +46,9 @@
 		</div>
 
 		{#if data.metadata.thumbnail}
-			<img class="thumbnail" alt="thumbnail" src="{data.metadata.thumbnail}">
+			<img class="thumbnail" alt="thumbnail" src="{data.metadata.thumbnail}" style='view-transition-name: {data.id}'>
 		{:else if data.metadata.emoji}
-			<img class="thumbnail emoji" alt="thumbnail" src="{data.metadata.emoji}">
+			<img class="thumbnail emoji" alt="thumbnail" src="{data.metadata.emoji}" style='view-transition-name: {data.id}'>
 		{/if}
 
 		<div class="md">
@@ -108,10 +108,9 @@
 		background-color: var(--back-color);
 		padding: 0 20px;
 		border-radius: 8px;
-		@media(width<720px){
+		@media(width<480px){
 			padding: 0;
 		}
-
 
 		& .title {
 			font-size: 2em;
@@ -125,6 +124,7 @@
 			width: 100%;
 			max-height: 50vh;
 			object-fit: contain;
+			contain: paint;
 		}
 		& .thumbnail.emoji {
 			margin: 5vw auto;

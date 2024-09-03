@@ -15,11 +15,11 @@
     let md = remark()
         .use(remarkBreaks)   // 改行
         .use(remarkgfm)      // Github Markdown
-        .use(remarkRehype)
+        .use(remarkRehype, {allowDangerousHtml: true})
         .use(rehypeslug)     // headingにidを設定
         .use(rehypeHighlight)// Syntax highlight
         .use(rehypeExternalLinks, {target:'_blank', rel:['noreferrer','noopener']})// 外部サイトを新規タブで開く
-        .use(rehypeStringify)
+        .use(rehypeStringify, {allowDangerousHtml: true})
         .processSync(mdtext)
 
 </script>
@@ -89,7 +89,8 @@
             background-color: var(--code-color);
         }
         & pre {
-            padding: 8px;
+            margin: 16px;
+            padding: 16px;
             box-sizing: border-box;
             border-radius: 8px;
             background-color: var(--code-block);
@@ -130,6 +131,15 @@
                 bottom: -.3em;
                 right: -.9em;
             }
+        }
+        & iframe {
+            display: block;
+            margin: 12px auto;
+            border: none;
+            width: 80%;
+            aspect-ratio: 16/9;
+            border-radius: 12px;
+            box-shadow: 0px 6px 30px var(--frame-shadow);
         }
     }
 </style>

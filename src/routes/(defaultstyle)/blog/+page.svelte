@@ -1,6 +1,5 @@
 <script>
 	export let data;
-
 	import Postgrid from '$lib/components/postgrid.svelte'
 </script>
 
@@ -8,8 +7,8 @@
 	<div class="posts">
 		{#each data.posts as post}
 			<div class="post">
-				<a style='text-decoration: none;' href="/blog/{post['id']}">
-					<Postgrid {...post.meta}></Postgrid>
+				<a style='text-decoration: none;' href="/blog/{post.id}">
+					<Postgrid id={post.id} {...post.meta}></Postgrid>
 				</a>
 			</div>
 		{/each}

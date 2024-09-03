@@ -1,5 +1,5 @@
 <script lang="ts">
-    import '../app.css';
+    import '../../app.css';
     import { onMount } from 'svelte';
     
     let scrollObserver: boolean = true;
@@ -85,6 +85,7 @@
         height: 100px;
         transition: height .2s;
         z-index: 10;
+        pointer-events: none;
         @media(width<1000px) {
             height: 50px;
         }
@@ -154,7 +155,7 @@
 
     #article {
         flex-grow: 1;
-        margin: 3%;
+        margin: 2.5%;
     }
 
     footer {
