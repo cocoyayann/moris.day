@@ -8,13 +8,19 @@
             document.querySelector("body")?.requestFullscreen();
         }
     }
+
+    function hide() {
+        let uuid = crypto.randomUUID()
+        window.name = uuid
+        window.parent.postMessage({"id": uuid, 'message': 'toggleHide'}, '*');
+    }
 </script>
 
 <div id='window'>
     <header>
-        <div style="background-color: rgb(255 95 87)"></div>
-        <div style="background-color: rgb(255 188 46)"></div>
-        <button style="background-color: rgb(40 200 64)" on:click={toggleFullScreen}></button>
+        <button style="background-color: rgb(255 95 87)"  on:click={()=>{location.reload()}}></button>
+        <button style="background-color: rgb(255 188 46)" on:click={hide}></button>
+        <button style="background-color: rgb(40 200 64)"  on:click={toggleFullScreen}></button>
     </header>
     <div class="code">
         <slot />
@@ -32,6 +38,8 @@
         border-radius: 12px;
         box-shadow: 0px 8px 40px var(--shadow-color);
         background-color: var(--back-color);
+        font-family: sans-serif;
+        overflow: hidden;
     }
 
     header {
@@ -49,11 +57,13 @@
             margin: 8px 4px;
             border-radius: 50%;
             background-color: gray;
+            cursor: pointer;
         }
     }
 
     .code {
         height: calc(100% - 28px);
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: scroll;
     }
 </style>

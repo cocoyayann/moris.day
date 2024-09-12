@@ -1,6 +1,8 @@
 <script>
     export let mdtext;
 
+    import { onMount } from "svelte";
+
     import './rainbow.css';
 
     import { remark } from 'remark'
@@ -22,6 +24,25 @@
         .use(rehypeStringify, {allowDangerousHtml: true})
         .processSync(mdtext)
 
+    onMount(()=>{
+        let toggleHide = function(e){
+
+            let iframes = document.getElementsByTagName('iframe')
+            for ( let i = 0; i < iframes.length; i++ ){
+                try{
+                    console.log(iframes[i].contentWindow.name)
+                    if (e.origin === window.origin && iframes[i].contentWindow.name == e.data.id){
+                        iframes[i].classList.toggle('hide')
+                    }
+                }catch(e){
+                    console.log(e)
+                }
+            }
+        }
+        window.addEventListener('message', toggleHide)
+
+        return ()=>{window.removeEventListener('message', toggleHide)}
+    })
 </script>
 
 <div class='markdown'>
@@ -67,8 +88,11 @@
         */
 
         & p {
-            margin: 0 16px;
+            margin: 0 1.5em;
             line-height: 1.8em;
+            @media (width<480px) {
+                margin: 0 .5em;
+            }
         }
 
         & li {
@@ -96,6 +120,9 @@
             background-color: var(--code-block);
             color: #d1d9e1;
             overflow-x: scroll;
+            @media (width<480px) {
+                margin: 0;
+            }
             & code {
                 margin: 0;
                 padding: 0;
@@ -134,12 +161,41 @@
         }
         & iframe {
             display: block;
-            margin: 12px auto;
+            margin: 30px auto;
             border: none;
             width: 80%;
             aspect-ratio: 16/9;
             border-radius: 12px;
             box-shadow: 0px 6px 30px var(--frame-shadow);
+            max-height: 75vh;
+            transition: max-height .3s ease-in-out;
+            &.hide {
+                max-height: 30px;
+            }
+            @media(width<480px) {
+                width: 100%;
+                aspect-ratio: 4/3;
+                box-shadow: 0px 4px 16px var(--frame-shadow);
+            }
+            @media(width>1280px) {
+                width: 60%;
+            }
+            &[src*="youtube.com"]{
+                aspect-ratio: 16/9;
+            }
+        }
+        & video {
+            display: block;
+            margin: 30px auto;
+            width: 80%;
+            border-radius: 15px;
+            box-shadow: 0px 6px 30px var(--frame-shadow);
+            @media(width<480px) {
+                width: 100%;
+            }
+            @media(width>1280px) {
+                width: 60%;
+            }
         }
     }
 </style>

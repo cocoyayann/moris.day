@@ -1,6 +1,7 @@
 <script lang="ts">
     import '../../app.css';
     import { onMount } from 'svelte';
+    import { onNavigate } from '$app/navigation';
     
     let scrollObserver: boolean = true;
     $: header = scrollObserver ? '':'hide';
@@ -13,7 +14,18 @@
         observer.observe(document.querySelector("#scroll")!)
     });
 
-    onMount(()=>console.log("%cスクリプト実行しろ\nは全て詐欺です。", "font-size:10em;color:red;font-weight:bold;"));
+    //onMount(()=>console.log("%cスクリプト実行しろ\nは全て詐欺です。", "font-size:10em;color:red;font-weight:bold;"));
+
+    onNavigate((navigation) => {
+        if (!document.startViewTransition) return;
+
+        return new Promise((resolve) => {
+            document.startViewTransition(async () => {
+                resolve();
+                await navigation.complete;
+            });
+        });
+    });
 </script>
 
 
@@ -95,6 +107,7 @@
         height: 100%;
         background-color: var(--theme-color);
         transition: height .2s, transform .5s;
+        pointer-events: all;
     }
     #h-container.hide {
         height: 50px;

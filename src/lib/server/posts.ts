@@ -5,7 +5,7 @@ import { readdirSync } from 'node:fs';
 import readmd from './readmd';
 
 function posts(){
-    const postPaths = readdirSync(`${process.cwd()}/src/lib/posts`);
+    const postPaths = readdirSync(`${process.cwd()}/posts`);
     const postNames = postPaths.map((post)=>path.parse(post).name).sort((a,b)=>{
         return readmd(b).metadata.date.getTime() - readmd(a).metadata.date.getTime()
     })

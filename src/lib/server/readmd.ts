@@ -5,7 +5,7 @@ import meta from '$lib/server/meta'
 
 
 function readmd(postid:string){
-    const postfile = readFileSync(`${process.cwd()}/src/lib/posts/${postid}.md`, 'utf8');
+    const postfile = readFileSync(`${process.cwd()}/posts/${postid}.md`, 'utf8');
 
     let fm_line = postfile.split('\n')
 

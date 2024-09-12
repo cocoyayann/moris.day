@@ -2,9 +2,10 @@
 </script>
 
 <div id='header'>
-    <h1 >Sample Code iframe</h1>
-    <h2 >How To Use</h2>
-    <p><code>&lt;iframe src="/blog/iframe/fileName" style="border:none;"&gt;&lt;/iframe&gt;</code></p>
+    <h1>Sample Code iframe</h1>
+    <h3>How To Use</h3>
+    <p>add iframe in markdown file</p>
+    <p><code>&lt;iframe src="/blog/iframe/fileName"&gt;&lt;/iframe&gt;</code></p>
 </div>
 
 <style>

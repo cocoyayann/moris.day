@@ -29,7 +29,7 @@ body {
 }
 
 body:fullscreen {
-    padding: 100px;
+    padding: 10%;
     background-image: url(/img/BigSur.avif);
     background-size: cover;
 }

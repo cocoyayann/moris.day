@@ -10,6 +10,7 @@
 <svelte:head>
 	<title>{data.metadata.title} | moris.day Blog</title>
 
+	<meta property="og:type" content="article">
 	<meta property="og:title" content="{data.metadata.title}">
 	<meta property="og:url" content="https://moris.day/blog/{data.id}">
 	<meta property="og:description" content="{data.metadata.description}">
@@ -48,7 +49,7 @@
 		{#if data.metadata.thumbnail}
 			<img class="thumbnail" alt="thumbnail" src="{data.metadata.thumbnail}" style='view-transition-name: {data.id}'>
 		{:else if data.metadata.emoji}
-			<img class="thumbnail emoji" alt="thumbnail" src="{data.metadata.emoji}" style='view-transition-name: {data.id}'>
+			<div class='thumbnail emoji'><img class="emoji" alt="thumbnail" src="{data.metadata.emoji}" style='view-transition-name: {data.id}'></div>
 		{/if}
 
 		<div class="md">
@@ -121,18 +122,24 @@
 		& .thumbnail {
 			display: block;
 			margin: 0 auto;
-			width: 100%;
+		}
+		& img {
+			max-width: 100%;
 			max-height: 50vh;
 			object-fit: contain;
-			contain: paint;
 		}
 		& .thumbnail.emoji {
-			margin: 5vw auto;
-			max-width: 40%;
-			max-height: 30vh;
+			width: 30%;
+			aspect-ratio: 1;
+			& img {
+				margin: 5%;
+			}
 		}
 		& .md {
 			margin: 25px 0;
+			@media (width<480px) {
+				margin: 8px;
+			}
 		}
 	}
 
